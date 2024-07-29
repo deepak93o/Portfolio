@@ -1,41 +1,3 @@
-<?php
-
-$host = "sql212.byetcluster.com";
-$username = "if0_36881348"; 
-$password = "Deepak45516111"; 
-$db = "if0_36881348_users"; 
-
-// Initialize variables
-$messageSent = false;
-$errorMessage = '';
-
-// Process form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-    // Create connection
-    $conn = new mysqli($host, $username, $password, $db);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Failed to connect to database: " . $conn->connect_error);
-    }
-
-    // Sanitize inputs (to prevent SQL injection)
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $message = mysqli_real_escape_string($conn, $_POST['message']);
-
-    // Insert data into database
-    $insertQuery = "INSERT INTO users (Name, Email, Message) VALUES ('$name', '$email', '$message')";
-    if ($conn->query($insertQuery) === TRUE) {
-        $messageSent = true;
-    } else {
-        $errorMessage = "Error: " . $conn->error;
-    }
-
-    // Close connection
-    $conn->close();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -238,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             <i class="fab fa-html5"></i>
             <i class="fab fa-css3-alt"></i>
             <i class="fab fa-php"></i>
-            <h2>Log in Page with back-end</h2>
+            <h2>Log in Page</h2>
             <p>Build Using HTML, CSS, JS, PHP</p>
             <button><a href="https://github.com/deepak93o/Log-in-Page" target="blank">View source <i
               class="fas fa-external-link-alt"></i></a>
@@ -256,7 +218,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             <i class="fab fa-css3-alt"></i>
             <i class="fab fa-php"></i>
             <i class="fab fa-github"></i>
-            <h2>Sign Up Page with back-end</h2>
+            <h2>Sign Up Page</h2>
             <p>Build Using HTML, CSS, JS, PHP</p>
             <button><a href="https://github.com/deepak93o/login-signup-page" target="blank">View source <i
               class="fas fa-external-link-alt"></i></a>
@@ -283,12 +245,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
           </button>
           </div>
         </div>
+
+        <div class="proj-1">
+          <img src="t2v.png">
+          <div class="proj1-details">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+            <h2>Text to Voice Converter</h2>
+            <p>Build Using HTML, CSS, JS</p>
+            <button><a href="https://github.com/deepak93o/Text-to-Voice-Converter-.git" target="blank">View source <i
+              class="fas fa-external-link-alt"></i></a>
+            </button>
+            <button><a href="https://deepak93o.github.io/Text-to-Voice-Converter-/" target="blank">Try it Live <i
+              class="fas fa-external-link-alt"></i></a>
+          </button>
+          </div>
+        </div>
     </div>
   </section>
-
-
-
-
 
 <!--PROJECT SECTION ENDS HERE-->
 
