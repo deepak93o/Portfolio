@@ -1,0 +1,4 @@
+- It's a Web dev project which is a portfolio website.
+- This is my portfolio having all details and about my projects.
+- I made this project within a week.
+- I use HTML, CSS & JS for this project.
